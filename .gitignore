@@ -1,2 +1,6 @@
+
+
+# ignores 
 .dlt 
 setup_user.sql 
+setup_user*
