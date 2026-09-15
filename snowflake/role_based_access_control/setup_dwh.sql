@@ -1,0 +1,15 @@
+-- set what role you want to use 
+USE ROLE SYSADMIN;
+
+SHOW WAREHOUSES; 
+
+-- CREATE WAREHOUSE 
+CREATE WAREHOUSE IF NOT EXISTS dev_wh
+WITH 
+    WAREHOUSE_SIZE = 'XSMALL'
+    AUTO_SUSPEND = 60
+    AUTO_RESUME = TRUE 
+    INITIALLY_SUSPENDED = TRUE 
+    COMMENT = "warehouse for development and analysis";
+
+SHOW WAREHOUSES; 
