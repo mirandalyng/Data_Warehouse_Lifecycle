@@ -7,9 +7,9 @@ SHOW WAREHOUSES;
 CREATE WAREHOUSE IF NOT EXISTS dev_wh
 WITH 
     WAREHOUSE_SIZE = 'XSMALL'
-    AUTO_SUSPEND = 60
-    AUTO_RESUME = TRUE 
-    INITIALLY_SUSPENDED = TRUE 
-    COMMENT = "warehouse for development and analysis";
+    AUTO_SUSPEND = 60 -- auto suspended after 60 seconds 
+    AUTO_RESUME = TRUE -- to be able to auto_resume when it recievs a query 
+    INITIALLY_SUSPENDED = TRUE -- that it's not active 
+    COMMENT = "warehouse for development and analysis"; 
 
 SHOW WAREHOUSES; 
