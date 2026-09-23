@@ -1,0 +1,11 @@
+USE ROLE ORGADMIN; 
+
+
+SHOW ACCOUNTS; 
+
+use role useradmin; 
+
+DESC USER transformer;
+
+USE ROLE SECURITYADMIN;  -- eller ACCOUNTADMIN
+

@@ -1,6 +1,17 @@
+__pycache__/
+
 
 
 # ignores 
+
+# Ignores all files with .dlt in it 
+
+**/.dlt/ 
+
 .dlt 
+
 setup_user.sql 
 setup_user*
+
+*.DS_Store
+

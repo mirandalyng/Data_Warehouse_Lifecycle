@@ -10,3 +10,9 @@ CREATE SCHEMA IF NOT EXISTS movies.staging;
 SHOW DATABASES; 
 
 DESCRIBE DATABASE MOVIES; 
+
+
+USE DATABASE movies; 
+
+USE SCHEMA movies.staging; 
+

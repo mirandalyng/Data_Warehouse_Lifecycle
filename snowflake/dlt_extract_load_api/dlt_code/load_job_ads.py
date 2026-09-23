@@ -11,6 +11,9 @@ def _get_ads(url_for_search, params):
     response.raise_for_status()  # check for http errors
     return json.loads(response.content.decode('utf8'))
 
+# create a dlt resources
+# it is just a funciton that you want to extract the data
+
 
 @dlt.resource(write_disposition="replace")
 def jobads_resource(params):
@@ -26,6 +29,7 @@ def jobads_resource(params):
 # pipeline
 
 def run_pipeline(query, table_name):
+    # defining the pipeline
     pipeline = dlt.pipeline(pipeline_name="jobsearch",
                             destination="snowflake", dataset_name="staging")
 

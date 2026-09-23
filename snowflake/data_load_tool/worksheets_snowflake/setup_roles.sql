@@ -12,6 +12,8 @@ GRANT ROLE movies_dlt_role TO USER extract_loader;
 
 -- grant it to myself to be able to see in snowflake 
 GRANT ROLE movies_reader_role TO USER mirandalyng;
+
+-- GRANT USAGE 
 GRANT USAGE ON WAREHOUSE dev_wh TO ROLE movies_dlt_role; 
 GRANT USAGE ON DATABASE movies TO ROLE movies_dlt_role; 
 GRANT USAGE ON SCHEMA movies.staging TO ROLE movies_dlt_role; 

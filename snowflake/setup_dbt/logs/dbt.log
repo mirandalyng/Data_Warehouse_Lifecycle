@@ -1,0 +1,56 @@
+[0m13:06:03.998372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d00e270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e45b610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e45b9d0>]}
+
+
+============================== 13:06:04.002523 | 9f222a94-9547-4dc3-9844-2e5f8db54875 ==============================
+[0m13:06:04.002523 [info ] [MainThread]: Running with dbt=1.12.5
+[0m13:06:04.002992 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'invocation_command': 'dbt init dbt_code', 'target_path': 'None', 'write_json': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'no_print': 'None', 'log_path': 'logs', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'debug': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'empty': 'None', 'log_format': 'default', 'partial_parse': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/mirandalyng/.dbt', 'static_parser': 'True', 'printer_width': '80', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True'}
+[0m13:06:04.016797 [debug] [MainThread]: Starter project path: /Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/include/starter_project
+[0m13:06:04.022575 [info ] [MainThread]: Setting up your profile.
+[0m13:06:16.451899 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:06:16.452324 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:06:16.452580 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:06:36.597464 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m13:06:36.609569 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/cli/main.py", line 504, in init
+    results = task.run()
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 363, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/dbt/task/init.py", line 116, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/click/termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+  File "/Users/mirandalyng/Desktop/Data_engineer/GitHub_repos/Data_Warehouse_Lifecycle/.venv/lib/python3.13/site-packages/click/termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m13:06:36.615504 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 32.70499, "process_in_blocks": "0", "process_kernel_time": 0.473882, "process_mem_max_rss": "213352448", "process_out_blocks": "0", "process_user_time": 1.68346}
+[0m13:06:36.621027 [debug] [MainThread]: Command `dbt init` failed at 13:06:36.620823 after 32.71 seconds
+[0m13:06:36.621830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115316ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1155cc710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1152cead0>]}
+[0m13:06:36.622380 [debug] [MainThread]: Flushing usage events
+[0m13:06:41.584877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c49a270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d8e7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d8e79d0>]}
+
+
+============================== 13:06:41.589194 | 22bb915e-9260-42e8-abd7-c9fc32c4c3d4 ==============================
+[0m13:06:41.589194 [info ] [MainThread]: Running with dbt=1.12.5
+[0m13:06:41.589668 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init dbt_code', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/mirandalyng/.dbt', 'log_cache_events': 'False', 'no_print': 'None', 'target_path': 'None', 'hints_enabled': 'True', 'printer_width': '80', 'empty': 'None', 'fail_fast': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'log_path': 'logs', 'use_experimental_parser': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'maximum_seed_size_mib': '1', 'static_parser': 'True', 'partial_parse': 'True', 'introspect': 'True'}
+[0m13:06:41.602457 [info ] [MainThread]: A project called dbt_code already exists here.
+[0m13:06:41.602972 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.12979166, "process_in_blocks": "0", "process_kernel_time": 0.21379, "process_mem_max_rss": "120340480", "process_out_blocks": "0", "process_user_time": 1.145117}
+[0m13:06:41.603362 [debug] [MainThread]: Command `dbt init` succeeded at 13:06:41.603284 after 0.13 seconds
+[0m13:06:41.603609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d917a80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d767e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d9c8af0>]}
+[0m13:06:41.603858 [debug] [MainThread]: Flushing usage events
+[0m13:06:42.107563 [debug] [MainThread]: An error was encountered while trying to flush usage events
