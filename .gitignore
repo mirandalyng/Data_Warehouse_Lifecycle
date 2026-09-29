@@ -15,3 +15,9 @@ setup_user*
 
 *.DS_Store
 
+
+#From dbd init 
+target/
+dbt_packages/
+logs/
+.env
