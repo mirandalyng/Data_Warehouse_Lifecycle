@@ -1,0 +1,35 @@
+models:
+  - name: dim_employer
+    columns:
+      - name: employer_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: workplace_city
+        data_tests:
+          - not_null
+
+  - name: dim_job_details
+    columns:
+      - name: job_details_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: headline
+        data_tests:
+          - not_null
+
+  - name: fct_job_ads
+    columns:
+      - name: job_details_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_job_details')
+                field: job_details_id
+
+      - name: relevance
+        data_tests:
