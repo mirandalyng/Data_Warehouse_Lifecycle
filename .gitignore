@@ -11,6 +11,7 @@ __pycache__/
 .dlt 
 
 setup_user.sql 
+setup_user_role.sql
 setup_user*
 
 *.DS_Store
