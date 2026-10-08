@@ -7,6 +7,8 @@ import dlt
 from pathlib import Path
 
 
+# 13: 15 (schedule) → job_dlt körs → dlt-asset uppdateras → sensor märker det → job_dbt körs
+
 sys.path.insert(0, "../data_extract_load")
 from load_job_ads import jobads_source  # noqa: E402  # isort: skip
 
